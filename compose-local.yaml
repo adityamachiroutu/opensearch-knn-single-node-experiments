@@ -17,6 +17,20 @@ services:
       - "OPENSEARCH_JAVA_OPTS=-Xms${TEST_JVM} -Xmx${TEST_JVM} -XX:StartFlightRecording=delay=5s,dumponexit=true,filename=/share-data/profiles/${RUN_ID}.jfr"
       - "DISABLE_SECURITY_PLUGIN=true"
       - "RUN_ID=${RUN_ID}"
+      - TEST_REPO=https://github.com/adityamachiroutu/k-NN.git
+      - TEST_BRANCH=bbq-lucene-integration
+      - TEST_JVM=30517M
+      - TEST_CPU_COUNT=8
+      - TEST_MEM_SIZE=41234M
+      - METRICS_JVM=1G
+      - METRICS_CPU_COUNT=2
+      - METRICS_MEM_SIZE=4G
+      - OSB_PROCEDURE=one-click-1-defaults-no-train
+      - OSB_PARAMS=/share-data/osb/params.json
+      - OSB_CPU_COUNT=5
+      - OSB_MEM_SIZE=16G
+      - OPENSEARCH_VERSION=3.2.0
+      - OSB_WORKLOADS_REPO=https://www.github.com/adityamachiroutu/opensearch-benchmark-workloads.git
     ulimits:
       memlock:
         soft: -1
