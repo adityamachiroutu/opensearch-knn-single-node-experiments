@@ -63,6 +63,7 @@ if [ ! -z "${WORKLOAD_REPO}" ] && [ "${WORKLOAD_REPO}" != "" ]; then
         echo "Failed to clone repository"
         exit 1
     fi
+fi
 
 # Initialize OSB so benchmark.ini gets created and patch benchmark.ini
 if [ ! -f "~/.benchmark/benchmark.ini" ]; then
