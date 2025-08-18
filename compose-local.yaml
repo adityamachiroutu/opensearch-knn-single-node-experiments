@@ -86,8 +86,8 @@ services:
       - test
     volumes:
       - type: bind
-        source: /source-data
-        target: /source-data
+        source: /share-data
+        target: /share-data
     networks:
       - test-net
     environment:
