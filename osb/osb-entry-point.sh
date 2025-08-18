@@ -95,7 +95,6 @@ cat ~/.benchmark/benchmark.ini
 echo "Running OSB..."
 opensearch-benchmark execute-test ${WORKLOAD_ARG} \
     --target-hosts ${TEST_ENDPOINT} \
-    --workload vectorsearch \
     --workload-params ${PARAMS_FILE} \
     --pipeline benchmark-only \
     --test-procedure=${PROCEDURE} \
