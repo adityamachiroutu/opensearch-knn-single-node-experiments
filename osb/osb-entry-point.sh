@@ -93,6 +93,26 @@ if [ ! -f "~/.benchmark/benchmark.ini" ]; then
 fi
 cat ~/.benchmark/benchmark.ini
 # Run OSB and write output to a particular file in results
+
+
+# Clone and build OSB according to the developer guide
+git clone https://github.com/adityamachiroutu/opensearch-benchmark.git /opensearch-benchmark/source
+
+cd /opensearch-benchmark/source
+
+# Initialize pyenv
+export PATH="/root/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
+
+# Build OSB locally following the developer guide
+echo "Building OSB locally..."
+make develop
+
+# Activate the virtual environment
+source .venv/bin/activate
+
+
 echo "Running OSB..."
 opensearch-benchmark execute-test ${WORKLOAD_ARG} \
     --target-hosts ${TEST_ENDPOINT} \
