@@ -65,6 +65,7 @@ if [ ! -z "${WORKLOAD_REPO}" ] && [ "${WORKLOAD_REPO}" != "" ]; then
     fi
 fi
 
+
 # Initialize OSB so benchmark.ini gets created and patch benchmark.ini
 if [ ! -f "~/.benchmark/benchmark.ini" ]; then
   echo "Initializing OSB..."
