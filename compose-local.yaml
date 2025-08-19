@@ -44,7 +44,7 @@ services:
     cap_add:
       - SYS_ADMIN
   metrics:
-    image: opensearchproject/opensearch:3.2.0
+    image: opensearchproject/opensearch:2.18.0
     container_name: metrics
     environment:
       - cluster.name=metrics

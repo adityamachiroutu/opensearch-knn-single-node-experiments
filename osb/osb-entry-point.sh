@@ -45,8 +45,6 @@ RESULTS_PATH=${SHARED_PATH}/results
 OSB_PATH=${SHARED_PATH}/osb
 STOP_PROCESS_PATH=${SHARED_PATH}/stop.txt
 
-mkdir -p -m 777 ${RESULTS_PATH}
-
 WORKLOAD_ARG=""
 if [ ! -z "${WORKLOAD_REPO}" ] && [ "${WORKLOAD_REPO}" != "" ]; then
     # Clean up any existing repo
