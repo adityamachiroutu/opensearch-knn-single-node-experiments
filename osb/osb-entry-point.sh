@@ -112,7 +112,7 @@ source .venv/bin/activate
 
 
 echo "Running OSB..."
-opensearch-benchmark run ${WORKLOAD_ARG} \
+opensearch-benchmark execute-test ${WORKLOAD_ARG} \
     --target-hosts ${TEST_ENDPOINT} \
     --workload-params ${PARAMS_FILE} \
     --pipeline benchmark-only \
@@ -122,10 +122,6 @@ opensearch-benchmark run ${WORKLOAD_ARG} \
     --results-file=${RESULTS_PATH}/osb-results-${RUN_ID}.csv | tee /tmp/output.txt
 
 cp /opensearch-benchmark/.benchmark/logs/benchmark.log ${OSB_PATH}/benchmark-${RUN_ID}.log
-
-echo "Checking workload directory:"
-ls -la /opensearch-benchmark/.benchmark/benchmarks/workloads/custom/vectorsearch/indices || echo "Directory doesn't exist"
-ls -la /opensearch-benchmark/.benchmark/benchmarks/workloads/
 
 
 #TODO: Make this configurable.
