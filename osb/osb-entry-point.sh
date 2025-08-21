@@ -112,7 +112,7 @@ source .venv/bin/activate
 
 
 echo "Running OSB..."
-opensearch-benchmark execute-test ${WORKLOAD_ARG} \
+opensearch-benchmark run ${WORKLOAD_ARG} \
     --target-hosts ${TEST_ENDPOINT} \
     --workload-params ${PARAMS_FILE} \
     --pipeline benchmark-only \
